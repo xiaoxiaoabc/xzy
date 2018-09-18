@@ -18,7 +18,7 @@ body{
 }
 input{
     border:none;
-	-webkit-appearance: none;
+	-webkit-tap-highlight-color: transparent;
 }
 .login_box{
     height: 100%;

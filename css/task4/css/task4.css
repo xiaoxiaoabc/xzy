@@ -54,7 +54,7 @@ input{
 }
 .phone{
     width: 13px;
-    padding: 3px 22px 0 22px;
+    padding: 3px 22px;
 	border-right: 2px solid #eaedee;
 
 }

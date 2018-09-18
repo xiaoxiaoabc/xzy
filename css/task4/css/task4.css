@@ -30,7 +30,9 @@ input{
     text-align: center;
     color:#fff;
     font-size: 16px;
-    position: relative;
+    position: fixed;
+    width: 100%;
+	z-index: 1;
 }
 .close , .register{
     position: absolute;
@@ -83,4 +85,7 @@ input{
     float: right;
     padding: 10px;
     color: #5fc0cd;
+}
+.content{
+    padding-top: 45px;
 }

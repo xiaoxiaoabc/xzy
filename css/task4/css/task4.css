@@ -18,6 +18,7 @@ body{
 }
 input{
     border:none;
+	-webkit-appearance: none;
 }
 .login_box{
     height: 100%;

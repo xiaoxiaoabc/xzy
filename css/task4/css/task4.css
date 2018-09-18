@@ -33,26 +33,18 @@ input{
     position: relative;
 }
 .close , .register{
-    width: 54px;
     position: absolute;
-    top:0;
 }
 .close{
-    left: 0px;
+    left: 15px;
 }
 .register{
-    right: 0px;
+    right: 15px;
 }
 .login_content{
     background-color: #fff;
     padding:12px 0;
     margin-top: 8px;
-}
-.login_content div{
-    width: 58px;
-    height: 26px;
-    display: inline-block;
-    border-right: 2px solid #eaedee;
 }
 .login_content input{
     height: 26px;
@@ -62,7 +54,8 @@ input{
 }
 .phone{
     width: 13px;
-    padding: 3px 0 0 22px;
+    padding: 3px 22px 0 22px;
+	border-right: 2px solid #eaedee;
 
 }
 .login_content input::-webkit-input-placeholder { /* WebKit browsers */

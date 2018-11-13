@@ -1,18 +1,18 @@
 .box{
     width: 100%;
-    height: 100%;
+    /*height: 100%;*/
     background-color: #fff;
-    position: fixed;
-    left: 50%;
-    top: 0;
     max-width: 750px;
-    transform: translateX(-50%);
 
 }
 header{
     width: 100%;
     height: 40px;
     background-color: #44a8a8;
+	position: fixed;
+	left:0;
+	top:0;
+	z-index: 999;
 }
 header p{
     height: 40px;
@@ -23,7 +23,7 @@ header p{
 }
 .reg_box{
     width: 90%;
-	margin: 0 auto;
+	margin: 40px auto;
 }
 .reg_box_header{
 	width:100%;

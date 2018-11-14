@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <link href="css/mobile/reset.css" rel="stylesheet" />
+    <link href="css/mobile/reg2.css" rel="stylesheet" />
+	<link href="css/mobile/common.css" rel="stylesheet" />
+	<script src="js/mobile/vue.js"></script>
+</head>
+<body>
+<div class="box" id="app">
+    <header>
+		<img src="img/mobile/close.png" class="close" /><!--
+		--><p>首都富注册</p><!--
+		--><img src="img/mobile/sandian.png" class="sd" />
+    </header>
+    <div class="reg_box">
+		<div class="reg_box_header">
+			<a>
+				<i class="tuoke1" :class="{tuoke2:tkflag}" @click="tkclick"></i>
+				<span>拓客合伙人</span>
+			</a><!--
+		 --><a>
+				<i class="chuangke1" :class="{chuangke2:ckflag}" @click="ckclick"></i>
+				<span>创客合伙人</span>
+			</a><!--
+			--><a>
+				<!--<img src="img/mobile/chuangye1.png" /> -->
+				<i class="chuangye1" :class="{chuangye2:cyflag}" @click="cyclick"></i>
+				<span>创业合伙人</span>
+			</a><!--
+			--><a>
+			<i class="chuangtou1" :class="{chuangtou2:ctflag}" @click="ctclick"></i>
+				<span>创投合伙人</span>
+			</a>
+		</div>
+        <a href="javascript:;" class="item" :class="{tuokeitem:tkflag,chuangkeitem:ckflag,chuangyeitem:cyflag,chaungtouitem:ctflag}">
+			<i :class="{giftBlue:tkflag,giftYellow:ckflag,giftPurple:cyflag,giftRed:ctflag}"></i>
+			<span>每日赠现，最高万分之三</span>
+		</a>
+		<a href="javascript:;" class="item" :class="{tuokeitem:tkflag,chuangkeitem:ckflag,chuangyeitem:cyflag,chaungtouitem:ctflag}">
+			<i :class="{sellerBlue:tkflag,sellerYellow:ckflag,sellerPurple:cyflag,sellerRed:ctflag}"></i>
+			<span>推荐用户</span>
+		</a>
+		<a href="javascript:;" class="item" :class="{chuangkeitem:ckflag,chuangyeitem:cyflag,chaungtouitem:ctflag}">
+			<i :class="{shopGray:tkflag,shopYellow:ckflag,shopPurple:cyflag,shopRed:ctflag}"></i>
+			<span>申请商户</span>
+		</a>
+		<a href="javascript:;" class="item" :class="{chuangkeitem:ckflag,chuangyeitem:cyflag,chaungtouitem:ctflag}">
+			<i :class="{frinedsGray:tkflag,frinedsYellow:ckflag,frinedsPurple:cyflag,frinedsRed:ctflag}"></i>
+			<span>申请联合代理人</span>
+		</a>
+		<a href="javascript:;" class="item" :class="{chuangkeitem:ckflag,chuangyeitem:cyflag,chaungtouitem:ctflag}">
+			<i :class="{advGray:tkflag,advYellow:ckflag,advPurple:cyflag,advRed:ctflag}"></i>
+			<span>商户广告投放</span>
+		</a>
+		<a href="javascript:;" class="item" :class="{chaungtouitem:ctflag}">
+			<i :class="{issueGray:[tkflag,ckflag,cyflag],issueRed:ctflag}"></i>
+			<span>任务模块开发</span>
+		</a>
+		<input v-if="tkflag" type="submit" value="(100购贷款) 下一步" class="sub" @click="regSub" />
+		<input v-else-if="ckflag" type="submit" value="(1000购贷款) 下一步" class="sub" @click="regSub" />
+		<input v-else-if="cyflag" type="submit" value="(3000购贷款) 下一步" class="sub" @click="regSub" />
+		<input v-else-if="ctflag" type="submit" value="(10000购贷款) 下一步" class="sub" @click="regSub" />
+		<p class="ck" v-if="checked">
+			<img src="img/mobile/check2.png" @click="checked = !checked"  />已同意《首都福用户协议》
+			<span>免费注册</span>
+		</p>
+		<p class="ck" v-else="checked">
+			<img src="img/mobile/check1.png" @click="checked = !checked"  />同意《首都福用户协议》
+			<span>免费注册</span>
+		</p>
+    </div>
+</div>
+
+<script>
+	var vm = new Vue({
+		el:'#app',
+		data:{
+            checked:false,
+			tkflag: true,
+			ckflag:false,
+			cyflag:false,
+            ctflag:false
+		},
+        methods:{
+            regSub:function () {
+                if(this.checked){
+                    console.log("进行提交流程")
+                }else{
+                    console.log("没有勾选")
+                }
+            },
+            tkclick:function () {
+                this.ckflag = false;
+                this.cyflag = false;
+                this.ctflag = false;
+				this.tkflag = true;
+            },
+            ckclick:function () {
+				this.tkflag = false;
+				this.cyflag = false;
+				this.ctflag = false;
+				this.ckflag = true;
+            },
+            cyclick:function () {
+                this.tkflag = false;
+                this.ckflag = false;
+                this.ctflag = false;
+				this.cyflag = true;
+            },
+            ctclick:function () {
+                this.tkflag = false;
+                this.ckflag = false;
+                this.cyflag = false;
+                this.ctflag = true;
+            }
+        }
+	})
+</script>
+</body>
+</html>

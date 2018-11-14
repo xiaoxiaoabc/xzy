@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <link href="css/mobile/reset.css" rel="stylesheet" />
+    <link href="css/mobile/reg.css" rel="stylesheet" />
+    <link href="css/mobile/common.css" rel="stylesheet" />
+    <script src="js/mobile/vue.js"></script>
+    <script src="js/mobile/common.js"></script>
+</head>
+<body>
+<div class="box" id="app">
+    <h></h>
+    <div class="reg_box">
+        <p class="reg">注册</p>
+        <div>
+            <ul>
+                <li>
+                    <p class="fl">手机号码：</p>
+                    <input type="text" placeholder="请输入手机号" class="fl" v-model="tel">
+                </li>
+                <li>
+                    <p class="fl">账号密码：</p>
+                    <input type="text" placeholder="请输入6-12位数字和密码组合" class="fl" v-model="pwd">
+                </li>
+                <li>
+                    <p class="fl">确认密码：</p>
+                    <input type="text" placeholder="请再次输入密码" class="fl" v-model="pwdagain">
+                </li>
+                <li>
+                    <p class="fl">收货电话：</p>
+                    <input type="text" placeholder="请输入收货电话" class="fl" v-model="shtel">
+                </li>
+                <li>
+                    <p class="fl">收&nbsp;&nbsp;货&nbsp;&nbsp;人：</p>
+                    <input type="text" placeholder="请输入收货人姓名" class="fl" v-model="shname">
+                </li>
+                <li>
+                    <p class="fl">收货地址：</p>
+                    <input type="text" placeholder="请输入收货人详细地址" class="fl" v-model="address">
+                </li>
+                <li>
+                    <p class="fl">验&nbsp;&nbsp;证&nbsp;&nbsp;码：</p>
+                    <input type="text" placeholder="请输入验证码" class="fl" style="width: 105px" v-model="code">
+                    <input type="button" value="获取验证码" class="fl codebtn" >
+                </li>
+                <li>
+                    <p class="fl">推&nbsp;&nbsp;荐&nbsp;&nbsp;码：</p>
+                    <input type="text" placeholder="12345604" class="fl" v-model="refcode">
+                </li>
+                <p class="check" v-if="checked"><img src="img/mobile/check2.png" @click="checked = !checked" /> 勾选同意《首都富》用户协议</p>
+                <p class="check" v-else="checked"><img src="img/mobile/check1.png" @click="checked = !checked" /> 勾选同意《首都富》用户协议</p>
+                <input type="submit" value="确定注册" class="sub" @click="regSub">
+            </ul>
+        </div>
+    </div>
+</div>
+
+<script>
+    var vm = new Vue({
+        el:'#app',
+        data:{
+            checked:false,
+            tel:'',
+            pwd:'',
+            pwdagain:'',
+            shtel:'',
+            shname:'',
+            address:'',
+            code:'',
+            refcode:''
+
+        },
+        methods:{
+            regSub:function () {
+                if(this.checked){
+                    console.log("进行提交流程")
+                }else{
+                    console.log("没有勾选")
+                }
+            }
+        }
+    })
+</script>
+</body>
+</html>
